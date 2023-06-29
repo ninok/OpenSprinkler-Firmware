@@ -1,0 +1,12 @@
+name: build-raspberry
+run-name: ${{ github.actor }} is building OpenSprinkler for RaspberryPI
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: pguyot/arm-runner-action@v2
+      with:
+        commands: |
+            ./build.sh
